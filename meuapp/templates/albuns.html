@@ -1,0 +1,20 @@
+{% extends "master.html" %}
+
+{% block title %}
+  Meu App - Lista de todos os álbuns
+{% endblock %}
+
+
+{% block content %}
+
+  <p><a href="/">Home</a></p>
+
+  <h1>Álbuns</h1>
+
+  <ul>
+    {% for x in meusalbuns %}
+      <li><a href="detalhes/{{ x.id }}">{{ x.nome_album }}</a></li>
+    {% endfor %}
+  </ul>
+
+{% endblock %}

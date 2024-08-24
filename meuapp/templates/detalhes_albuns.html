@@ -1,0 +1,17 @@
+{% extends "master.html" %}
+
+{% block title %}
+  Detalhes sobre {{ meualbum.nome_album }}
+{% endblock %}
+
+
+{% block content %}
+  <h1>{{ meualbum.nome_album }}</h1>
+
+  <p>Ano de lançamento: {{ meualbum.ano_lancamento }}</p>
+
+  <p>Nome do Artista: {{ meualbum.artista.nome }}</p>
+
+  <p>Voltar para <a href="/albuns">Álbuns</a></p>
+
+{% endblock %}

@@ -1,0 +1,34 @@
+{% extends "master.html" %}
+
+{% block title %}
+  Detalhes sobre {{ meuartista.nome }}
+{% endblock %}
+
+{% block content %}
+  <h1>{{ meuartista.nome }}</h1>
+
+  <p>Endereço da página: {{ meuartista.endereco_pagina }}</p>
+  <p>Quantidade de integrantes: {{ meuartista.qtd_integrantes }}</p>
+
+  {% if not meuartista.genero %}
+    <p>Este artista ainda não possui gênero cadastrado.</p>
+  {% else %}
+    <p>Gênero musical: {{ meuartista.genero }}</p>
+  {% endif %}
+
+  <h2>Álbuns</h2>
+  {% if albuns %}
+    <ul>
+      {% for album in albuns %}
+        <li>{{ album.nome_album }} - {{ album.ano_lancamento }} </li>
+      {% endfor %}
+    </ul>
+  {% else %}
+    <p>Este artista ainda não tem álbuns cadastrados.</p>
+  {% endif %}
+
+  <p>Voltar para <a href="/artistas">Artistas</a></p>
+
+  <p>Voltar para <a href="/">home</a></p>
+
+{% endblock %}
