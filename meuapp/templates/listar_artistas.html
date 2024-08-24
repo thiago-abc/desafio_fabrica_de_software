@@ -1,0 +1,11 @@
+{% extends "master.html" %}
+
+{% block content %}
+{% for artista in meusartistas %}
+  <li>
+    {{ artista.nome }} - {{ artista.qtd_integrantes }}
+    <a href="{% url 'editar_artista' artista.pk %}">Editar</a> |
+    <a href="{% url 'excluir_artista' artista.pk %}">Excluir</a>
+  </li>
+{% endfor %}
+{% endblock %}

@@ -1,0 +1,12 @@
+{% extends "master.html" %}
+
+{% block content %}
+  <h2>Excluir Artista</h2>
+  <p>Tem certeza que deseja excluir {{ artista.nome }}?</p>
+
+  <form method="post">
+    {% csrf_token %}
+    <button type="submit">Sim, excluir</button>
+    <a href="{% url 'lista_artistas' %}">Cancelar</a>
+  </form>
+{% endblock %}
