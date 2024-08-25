@@ -82,3 +82,11 @@ def adiciona_album(request):
     return render(request, 'adicionar_album.html', {'form': form})
 
 
+@api_view(['GET'])
+def genero_data(request):
+    response = requests.get('https://binaryjazz.us/wp-json/genrenator/v1/genre/')
+    if response.status_code == 200:
+        data = response.json()
+        return Response(data)
+    else:
+        return Response({'error': 'Não foi possível obter os dados.'}, status=response.status_code)
