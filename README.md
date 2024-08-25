@@ -22,20 +22,26 @@ Instalação
 Siga as instruções abaixo para instalar e configurar o projeto em sua máquina local.
 
 1. Clone o repositório
+
 https://github.com/thiago-abc/desafio_fabrica_de_software.git
 
 2. Crie e ative um ambiente virtual
+
 python3 -m venv venv
 source venv/bin/activate  # No Windows use: venv\Scripts\activate
 
 3. Instale as dependências
+
 pip install -r requirements.txt
 
 4. Realize as migrações do banco de dados
+
 python manage.py migrate
 
 5. Crie um superusuário para acessar o Django Admin
+
 python manage.py createsuperuser
 
 6. Inicie o servidor de desenvolvimento
+
 python manage.py runserver
